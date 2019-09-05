@@ -7,18 +7,13 @@ class Post extends Component {
     const { slug } = query;
     const blogpost = await import(`../../content/blogPosts/${slug}.md`).catch(error => null);
 
-    console.log({ query, blogpost: blogpost.default });
-    // const postContent = await fetch(
-    //   `https://api.example.com/post/${encodeURIComponent(pid)}`
-    // ).then(r => r.text())
-
     return { blogpost };
   }
   render() {
+    //   empty post
+    if (!this.props.blogpost) return <div>not found</div>;
     // const router = useRouter();
-    const {
-      blogpost: { html, title },
-    } = this.props;
+    const { html, title } = this.props.blogpost.default;
     return (
       <article>
         <h1>{title}</h1>
