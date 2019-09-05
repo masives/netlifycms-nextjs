@@ -10,6 +10,7 @@ class Post extends Component {
     return { blogpost };
   }
   render() {
+    console.log('leci cokolwiek?');
     //   empty post
     if (!this.props.blogpost) return <div>not found</div>;
     // const router = useRouter();
