@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
         Example by <a href="https://www.github.com/masives">Józef Piecyk</a> for{' '}
         <a href="https://www.10clouds.com">10Clouds</a>
       </footer>
-      <style jsx>{`
+      <style jsx global>{`
         nav {
           text-align: center;
         }
