@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
 
 import Link from 'next/link';
-import axios from 'axios';
 import content from '../content/home.md';
-// console.log(process.env);
-export default class Home extends Component {
-  static async getInitialProps({}) {
-    const isDev = process.env.NODE_ENV === 'development';
-    const apiHref = isDev ? 'http://localhost:3000/api/posts' : `/api/posts`;
 
-    const postsList = await axios.get(apiHref);
-    return { postsList: postsList.data };
+const importBlogPosts = async () => {
+  // https://medium.com/@shawnstern/importing-multiple-markdown-files-into-a-react-component-with-webpack-7548559fce6f
+  // second flag in require.context function is if subdirectories should be searched
+  const markdownFiles = require
+    .context('../content/blogPosts', false, /\.md$/)
+    .keys()
+    .map(relativePath => relativePath.substring(2));
+  return Promise.all(markdownFiles.map(path => import(`../content/blogPosts/${path}`)));
+};
+
+export default class Home extends Component {
+  static async getInitialProps() {
+    const postsList = await importBlogPosts();
+
+    return { postsList };
   }
   render() {
     const { postsList } = this.props;
