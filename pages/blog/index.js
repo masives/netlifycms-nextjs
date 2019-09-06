@@ -14,7 +14,7 @@ const importBlogPosts = async () => {
   return Promise.all(
     markdownFiles.map(async path => {
       const markdown = await import(`../../content/blogPosts/${path}`);
-      return { ...markdown, path: path.substring(0, path.length - 3) };
+      return { ...markdown, slug: path.substring(0, path.length - 3) };
     })
   );
 };
@@ -31,7 +31,7 @@ export default class Blog extends Component {
       <div className="blog-list">
         {postsList.map(post => {
           return (
-            <Link href={`/posts/${post.path}`}>
+            <Link href={`blog/post/${post.slug}`}>
               <a>
                 <img src={post.attributes.thumbnail} />
                 <h2>{post.attributes.title}</h2>

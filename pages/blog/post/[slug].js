@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-// import { useRouter } from 'next/router';
 
 class Post extends Component {
   static async getInitialProps({ query }) {
     const { slug } = query;
-    const blogpost = await import(`../../content/blogPosts/${slug}.md`).catch(error => null);
+    const blogpost = await import(`../../../content/blogPosts/${slug}.md`).catch(error => null);
 
     return { blogpost };
   }

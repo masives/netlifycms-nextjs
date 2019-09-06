@@ -7,8 +7,8 @@ const getPathsForPosts = () => {
     .map(blogName => {
       const trimmedName = blogName.substring(0, blogName.length - 3);
       return {
-        [`/posts/${trimmedName}`]: {
-          page: '/posts/[slug]',
+        [`/blog/post/${trimmedName}`]: {
+          page: '/blog/post/[slug]',
           query: {
             slug: trimmedName,
           },
