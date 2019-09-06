@@ -1,5 +1,5 @@
 ---
-title: O sensie życia albo plackach
+title: O sensie życia albo plackachh
 date: 2019-03-17T19:31:20.591Z
 thumbnail: /static/img/2019-08-22-131525.jpg
 ---
