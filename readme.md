@@ -1,4 +1,4 @@
-netlifycms + next.js proof of concept
+[netlifycms](https://www.netlifycms.org/) with [next.js](https://nextjs.org/) proof of concept
 
 # How it works
 Sites take their content from markdown files in  `/content`. Two of pages (`home` and `about`) are referencing directly their respective markdown files.
