@@ -16,10 +16,6 @@ const Layout = ({ children }) => {
         </Link>
       </nav>
       <main>{children}</main>
-      <footer>
-        Example by <a href="https://www.github.com/masives">Józef Piecyk</a> for{' '}
-        <a href="https://www.10clouds.com">10Clouds</a>
-      </footer>
       <style jsx global>{`
         nav {
           text-align: center;
@@ -30,12 +26,9 @@ const Layout = ({ children }) => {
           padding: 4px;
         }
 
-        footer {
-          position: fixed;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          text-align: center;
+        main {
+          display: flex;
+          flex-direction: column;
         }
       `}</style>
     </React.Fragment>

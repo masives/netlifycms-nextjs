@@ -12,16 +12,25 @@ class Post extends Component {
 
     const {
       html,
-      title,
-      attributes: { thumbnail },
+      attributes: { thumbnail, title },
     } = this.props.blogpost.default;
 
     return (
-      <article>
-        <h1>{title}</h1>
-        <img src={thumbnail} />
-        <div dangerouslySetInnerHTML={{ __html: html }} />
-      </article>
+      <>
+        <article>
+          <h1>{title}</h1>
+          <img src={thumbnail} />
+          <div dangerouslySetInnerHTML={{ __html: html }} />
+        </article>
+        <style jsx>{`
+          article {
+            margin: 0 auto;
+          }
+          h1 {
+            text-align: center;
+          }
+        `}</style>
+      </>
     );
   }
 }

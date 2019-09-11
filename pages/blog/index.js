@@ -40,11 +40,6 @@ export default class Blog extends Component {
           );
         })}
         <style jsx>{`
-          .blog-list {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 20px;
-          }
           .blog-list a {
             display: block;
             text-align: center;
@@ -52,7 +47,7 @@ export default class Blog extends Component {
           .blog-list img {
             max-width: 100%;
 
-            height: auto;
+            max-height: 300px;
           }
         `}</style>
       </div>
